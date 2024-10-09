@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';   // ito Po Yung Library 
+
+//Counter is defined as a StatelessWidget, meaning it doesn’t manage any state of its own and builds its UI based on the data it receives at ito Yung bonago galing sa statefull
+class Counter extends StatelessWidget {
+
+// Key para sa management 
+  const Counter({super.key});
+
+//This is the method na ginamit ko
+void callBack (){
+// Itong print nato yung output nya sa Logs makikita
+  print ('The button was pressed');
+}
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        ElevatedButton(
+//This will send to the method if you click the button 
+          onPressed: callBack,
+          child: const Text('button'),// The text sa loob Ng button
+        ),
+      ],
+    );
+  }
+}
+
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
+}
+
+
