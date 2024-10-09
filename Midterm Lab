@@ -1,0 +1,39 @@
+link: https://zapp.run/edit/flutter-zk5k06vik5l0?entry=lib/main.dart&file=lib/main.dart
+
+import 'package:flutter/material.dart';
+
+class Counter extends StatelessWidget {
+
+  const Counter({super.key});
+
+
+void callBack (){
+  print ('The button was pressed');
+}
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        ElevatedButton(
+          onPressed: callBack,
+          child: const Text('button'),
+        ),
+      ],
+    );
+  }
+}
+
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
+}
